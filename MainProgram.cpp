@@ -24,13 +24,13 @@ public:
     double getX() const { return x; }   // stub — add const
 
     // TODO 3: const getter for y
-    double getY()const  { return y; }   // stub — add const
+    double getY() const  { return y; }   // stub — add const
 
     // TODO 4: const display()
     void display() const { std::cout << "("<<x <<","<<y<<")"; }
 
     // TODO 5: declare Rectangle as friend class
-friend class Rectangle;
+    friend class Rectangle;
 };
 
 
@@ -44,10 +44,10 @@ public:
         : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
 
     // TODO 7: const getWidth()
-    double getWidth() const { return std::abs (bottomRight.getX()-topLeft.getX()); }  // stub
+    double getWidth() const { return std::abs (bottomRight.getX() - topLeft.getX()); }  // stub
 
     // TODO 8: const getHeight()
-    double getHeight() const { return std::abs (bottomRight.getY()-topLeft.getY()); }  // stub
+    double getHeight() const { return std::abs (bottomRight.getY() - topLeft.getY()); }  // stub
 
     // TODO 9: const getArea()
     double getArea() const { return getWidth()*getHeight(); }  // stub
@@ -62,7 +62,7 @@ public:
 
 // TODO 12: implement isSameSize
 bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
-    return (r1.getArea()==r2.getArea());  // stub
+    return (r1.getArea() == r2.getArea());  // stub
 }
 
 
@@ -77,10 +77,10 @@ public:
     int getValue() { return value; }  // stub — add const
 
     // TODO 15: NON-const doubleValue() — multiplies value by 2
-    void doubleValue() {value *=2;}  // stub
+    void doubleValue() {value *= 2;}  // stub
 
     // TODO 16: const constGetDouble() — returns value * 2 without modifying
-    int constGetDouble() const { return value*2 ; }  // stub — add const + fix body
+    int constGetDouble() const { return value * 2 ; }  // stub — add const + fix body
 };
 
 

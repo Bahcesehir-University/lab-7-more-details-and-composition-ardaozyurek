@@ -24,10 +24,10 @@ public:
     double getX() const { return x; }   // stub — add const
 
     // TODO 3: const getter for y
-    double getY() const  { return y; }   // stub — add const
+    double getY() const { return y; }   // stub — add const
 
     // TODO 4: const display()
-    void display() const { std::cout << "("<<x <<","<<y<<")"; }
+    void display() const { std::cout << "(" << x << "," << y << ")"; }
 
     // TODO 5: declare Rectangle as friend class
     friend class Rectangle;
@@ -38,23 +38,28 @@ class Rectangle {
 private:
     Point topLeft;
     Point bottomRight;
+
 public:
     // TODO 6: constructor with member initializer list
     Rectangle(double x1, double y1, double x2, double y2)
-        : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
+        : topLeft(x1, y1), bottomRight(x2, y2) {}
 
     // TODO 7: const getWidth()
-    double getWidth() const { return std::abs (bottomRight.getX() - topLeft.getX()); }  // stub
+    double getWidth() const { return std::abs(bottomRight.getX() - topLeft.getX()); }
 
     // TODO 8: const getHeight()
-    double getHeight() const { return std::abs (bottomRight.getY() - topLeft.getY()); }  // stub
+    double getHeight() const { return std::abs(topLeft.getY() - bottomRight.getY()); }
 
     // TODO 9: const getArea()
-    double getArea() const { return getWidth()*getHeight(); }  // stub
+    double getArea() const { return getWidth() * getHeight(); }
 
     // TODO 10: const display()
-    void display() const {}
-
+    void display() const {
+        std::cout << "Width: " << getWidth()
+                  << " Height: " << getHeight()
+                  << " Area: " << getArea() << std::endl;
+    }
+    
     // TODO 11: declare isSameSize as friend function
     friend bool isSameSize(const Rectangle& r1, const Rectangle& r2);
 };
@@ -69,18 +74,19 @@ bool isSameSize(const Rectangle& r1, const Rectangle& r2) {
 class ConstDemo {
 private:
     int value;
+
 public:
     // TODO 13: constructor with member initializer list
-    ConstDemo(int v) : value(v) {}  // stub — fix initializer
-
+    ConstDemo(int v) : value(v) {}
+    
     // TODO 14: const getValue()
-    int getValue() { return value; }  // stub — add const
-
+    int getValue() const { return value; }
+    
     // TODO 15: NON-const doubleValue() — multiplies value by 2
-    void doubleValue() {value *= 2;}  // stub
-
+    void doubleValue() { value *= 2; }
+    
     // TODO 16: const constGetDouble() — returns value * 2 without modifying
-    int constGetDouble() const { return value * 2 ; }  // stub — add const + fix body
+    int constGetDouble() const { return value * 2; }
 };
 
 

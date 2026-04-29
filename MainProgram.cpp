@@ -30,6 +30,7 @@ public:
     void display() const { std::cout << "("<<x <<","<<y<<")"; }
 
     // TODO 5: declare Rectangle as friend class
+friend class Rectangle;
 };
 
 
